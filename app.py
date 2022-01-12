@@ -24,7 +24,7 @@ navbar = dbc.Navbar(
                         dbc.Col(html.Img(src = PLOTLY_LOGO, height = "70px"), ),
                         
                         dbc.Col(
-             dbc.NavbarBrand("App Title", style = {'color':'black', 'fontSize':'25px','fontFamily':'Times New Roman'}
+             dbc.NavbarBrand("Proposições de interesse do jornalismo que tramitam no Congresso", style = {'color':'black', 'fontSize':'25px','fontFamily':'Times New Roman'}
                             ),
              ),
 
@@ -36,7 +36,7 @@ navbar = dbc.Navbar(
             dbc.Row(
             [
         dbc.Col(
-        dbc.Button(id = 'button', children = "Click Me!", color = "primary"), 
+        dbc.Button(id = 'button', children = "Conheça a Abraji", color = "primary",  href = 'https://www.abraji.org.br/'), 
             )        
     ],
             # add a top margin to make things look nice when the navbar
