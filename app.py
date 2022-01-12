@@ -89,12 +89,12 @@ html.Br()
 
 body_app = dbc.Container([
              
-        dbc.Row( html.Marquee("As informações sobre proposições na Câmara e no Senado são buscados todo dia às 17h. Se nas ementas existem palavras-chave de interesse são alterados as planilhas e gráficos do projeto"), style = {'color':'green'}),
+        dbc.Row( html.Marquee("As informações sobre proposições na Câmara e no Senado são buscadas todo dia às 17h nas respectivas APIs. Se nas ementas existem palavras-chave de interesse são alterados as planilhas e gráficos do projeto"), style = {'color':'green'}),
         
         html.Br(),
         html.Br(),
         
-        dbc.Row([html.Div(html.H4('Como o Congresso tem debatido temas de interesse do jornalismo em termos de proposições'),
+        dbc.Row([html.Div(html.H4('Como o Legislativo federal tem debatido temas de interesse do jornalismo em termos de proposições'),
                       style = {'textAlign':'center','fontWeight':'bold','family':'georgia','width':'100%'})]),
 
         html.Br(),
