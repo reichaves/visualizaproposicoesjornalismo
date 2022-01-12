@@ -53,7 +53,7 @@ df_senado = df_senado.drop_duplicates(['CodigoMateria'], keep='last')
 conta_tiposs = df_senado.groupby(['tema_principal'])['CodigoMateria'].count().sort_values(ascending=False).reset_index()
 conta_tiposs.columns = ['tema_principal', 'total_de_proposicoes']
 
-figura2 = go.Figure([go.Bar(x = conta_tiposs['tema_principal'], y = conta_tiposs['total_de_proposicoes'], marker_color = 'aliceblue')])
+figura2 = go.Figure([go.Bar(x = conta_tiposs['tema_principal'], y = conta_tiposs['total_de_proposicoes'], marker_color = 'chartreuse')])
 
 figura2.update_layout(title = 'Total de tipos de proposições em tramitação no Senado',
                   xaxis_title = 'Temas principais das proposições',
