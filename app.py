@@ -8,6 +8,12 @@ import plotly.express as px
 import numpy as np
 from dash.dependencies import Input,Output
 from dash import dash_table
+import gspread
+import gspread_dataframe as gd
+import base64
+import json
+import io
+
 
 app = dash.Dash(external_stylesheets = [ dbc.themes.FLATLY],)
 
@@ -49,6 +55,11 @@ navbar = dbc.Navbar(
             
          ],
 )
+
+html.Br()
+html.Br()
+
+
 
 
 app.layout = html.Div(id = 'parent', children = [navbar])
