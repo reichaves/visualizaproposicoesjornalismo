@@ -43,6 +43,22 @@ figura1.update_layout(title = 'Total de tipos de proposições em tramitação n
                   )
 
 # Senado
+ws = gc.open('teste_proposicoes_jornalismo_senado').worksheet("Página1")
+
+data = ws.get_all_values()
+headers = data.pop(0)
+df_senado = pd.DataFrame(data, columns=headers)
+df_senado = df_senado.drop_duplicates(['id'], keep='last')
+
+conta_tiposs = df_senado.groupby(['tema_principal'])['CodigoMateria'].count().sort_values(ascending=False).reset_index()
+conta_tiposs.columns = ['tema_principal', 'total_de_proposicoes']
+
+figura2 = go.Figure([go.Bar(x = conta_tiposs['tema_principal'], y = conta_tiposs['total_de_proposicoes'])])
+
+figura2.update_layout(title = 'Total de tipos de proposições em tramitação no Senado',
+                  xaxis_title = 'Temas principais das proposições',
+                  yaxis_title = 'Total encontradas'
+                  )
 
 
 app.title = 'Proposições de interesse do jornalismo que tramitam no Congresso'
@@ -100,7 +116,8 @@ body_app = dbc.Container([
         html.Br(),
         html.Br(),
         
-        dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', figure = figura1), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
+        dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', figure = figura1), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6),
+                 dbc.Col(dcc.Graph(id = 'graph-senado', figure = figura2), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
              ])
 
          ],fluid = True)
