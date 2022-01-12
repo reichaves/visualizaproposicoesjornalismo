@@ -35,7 +35,7 @@ df_camara = df_camara.drop_duplicates(['id'], keep='last')
 conta_tipos = df_camara.groupby(['tema_principal'])['id'].count().sort_values(ascending=False).reset_index()
 conta_tipos.columns = ['tema_principal', 'total_de_proposicoes']
 
-figura1 = go.Figure([go.Bar(x = conta_tipos['tema_principal'], y = conta_tipos['total_de_proposicoes'], marker_color = 'blue')])
+figura1 = go.Figure([go.Bar(x = conta_tipos['tema_principal'], y = conta_tipos['total_de_proposicoes'], marker_color = 'darkturquoise')])
 
 figura1.update_layout(title = 'Total de tipos de proposições em tramitação na Câmara',
                   xaxis_title = 'Temas principais das proposições',
@@ -53,7 +53,7 @@ df_senado = df_senado.drop_duplicates(['CodigoMateria'], keep='last')
 conta_tiposs = df_senado.groupby(['tema_principal'])['CodigoMateria'].count().sort_values(ascending=False).reset_index()
 conta_tiposs.columns = ['tema_principal', 'total_de_proposicoes']
 
-figura2 = go.Figure([go.Bar(x = conta_tiposs['tema_principal'], y = conta_tiposs['total_de_proposicoes'], marker_color = 'yellow')])
+figura2 = go.Figure([go.Bar(x = conta_tiposs['tema_principal'], y = conta_tiposs['total_de_proposicoes'], marker_color = 'aliceblue')])
 
 figura2.update_layout(title = 'Total de tipos de proposições em tramitação no Senado',
                   xaxis_title = 'Temas principais das proposições',
