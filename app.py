@@ -34,6 +34,14 @@ df_camara = df_camara.drop_duplicates(['id'], keep='last')
 conta_tipos = df_camara.groupby(['tema_principal'])['id'].count().sort_values(ascending=False).reset_index()
 conta_tipos.columns = ['tema_principal', 'total_de_proposicoes']
 
+figura1 = go.Figure([go.Bar(x = conta_tipos['tema_principal'], y = conta_tipos['total_de_proposicoes'])])
+
+figura1.update_layout(title = 'Total de tipos de proposições em tramitação na Câmara',
+                  xaxis_title = 'Temas principais das proposições',
+                  yaxis_title = 'Total encontradas'
+                  )
+
+# Senado
 
 
 app.title = 'Proposições de interesse do jornalismo que tramitam no Congresso'
@@ -91,13 +99,8 @@ body_app = dbc.Container([
         html.Br(),
         html.Br(),
         
-        dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', fig = 
-                                   go.Figure([go.Bar(x = conta_tipos['tema_principal'], y = conta_tipos['total_de_proposicoes'])])
-                                   fig.update_layout(title = 'Total de tipos de proposições em tramitação na Câmara',
-                                                     xaxis_title = 'Temas principais das proposições',
-                                                     yaxis_title = 'Total encontradas')),style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
+        dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', fig = figura1), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
              ])
-
 
          ],fluid = True)
 
