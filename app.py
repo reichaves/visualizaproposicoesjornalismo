@@ -35,7 +35,7 @@ df_camara = df_camara.drop_duplicates(['id'], keep='last')
 conta_tipos = df_camara.groupby(['tema_principal'])['id'].count().sort_values(ascending=False).reset_index()
 conta_tipos.columns = ['tema_principal', 'total_de_proposicoes']
 
-figura1 = go.Figure([go.Bar(x = conta_tipos['tema_principal'], y = conta_tipos['total_de_proposicoes'], marker_color = 'darkturquoise')])
+figura1 = go.Figure([go.Bar(x = conta_tipos['tema_principal'], y = conta_tipos['total_de_proposicoes'], marker_color = 'darkgoldenrod')])
 
 figura1.update_layout(title = 'Total de tipos de proposições em tramitação na Câmara',
                   xaxis_title = 'Temas principais das proposições',
