@@ -48,7 +48,7 @@ ws = gc.open('teste_proposicoes_jornalismo_senado').worksheet("Página1")
 data = ws.get_all_values()
 headers = data.pop(0)
 df_senado = pd.DataFrame(data, columns=headers)
-df_senado = df_senado.drop_duplicates(['id'], keep='last')
+df_senado = df_senado.drop_duplicates(['CodigoMateria'], keep='last')
 
 conta_tiposs = df_senado.groupby(['tema_principal'])['CodigoMateria'].count().sort_values(ascending=False).reset_index()
 conta_tiposs.columns = ['tema_principal', 'total_de_proposicoes']
