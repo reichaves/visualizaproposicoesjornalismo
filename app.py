@@ -5,6 +5,7 @@ import requests
 import pandas as pd
 from dash import dcc
 import plotly.express as px
+import plotly.graph_objects as go
 import numpy as np
 from dash.dependencies import Input,Output
 from dash import dash_table
@@ -16,6 +17,24 @@ import io
 
 
 app = dash.Dash(external_stylesheets = [ dbc.themes.FLATLY],)
+
+# Acesso dados da Câmara
+conteudo_codificado = os.environ["GOOGLE_SHEET_CREDENTIALS1"]
+conteudo = base64.b64decode(conteudo_codificado)
+credentials = json.loads(conteudo)
+
+gc = gspread.service_account_from_dict(credentials)
+ws = gc.open('teste_proposicoes_jornalismo_camara').worksheet("Página1")
+
+data = ws.get_all_values()
+headers = data.pop(0)
+df_camara = pd.DataFrame(data, columns=headers)
+df_camara = df_camara.drop_duplicates(['id'], keep='last')
+
+conta_tipos = df_camara.groupby(['tema_principal'])['id'].count().sort_values(ascending=False).reset_index()
+conta_tipos.columns = ['tema_principal', 'total_de_proposicoes']
+
+
 
 app.title = 'Proposições de interesse do jornalismo que tramitam no Congresso'
 server = app.server
@@ -59,10 +78,32 @@ navbar = dbc.Navbar(
 html.Br()
 html.Br()
 
+body_app = dbc.Container([
+             
+        dbc.Row( html.Marquee("As informações sobre proposições na Câmara e no Senado são buscados todo dia às 17h. Se nas ementas existem palavras-chave de interesse são alterados as planilhas e gráficos do projeto"), style = {'color':'green'}),
+        
+        html.Br(),
+        html.Br(),
+        
+        dbc.Row([html.Div(html.H4('Como o Congresso tem debatido temas de interesse do jornalismo em termos de proposições'),
+                      style = {'textAlign':'center','fontWeight':'bold','family':'georgia','width':'100%'})]),
+
+        html.Br(),
+        html.Br(),
+        
+        dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', fig = 
+                                   go.Figure([go.Bar(x = conta_tipos['tema_principal'], y = conta_tipos['total_de_proposicoes'])])
+                                   fig.update_layout(title = 'Total de tipos de proposições em tramitação na Câmara',
+                                                     xaxis_title = 'Temas principais das proposições',
+                                                     yaxis_title = 'Total encontradas')),style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
+             ])
+
+
+         ],fluid = True)
 
 
 
-app.layout = html.Div(id = 'parent', children = [navbar])
+app.layout = html.Div(id = 'parent', children = [navbar, body_app])
 
 
 if __name__ == "__main__":
