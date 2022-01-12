@@ -11,6 +11,9 @@ from dash import dash_table
 
 app = dash.Dash(external_stylesheets = [ dbc.themes.FLATLY],)
 
+app.title = 'Proposições de interesse do jornalismo que tramitam no Congresso'
+server = app.server
+
 PLOTLY_LOGO = "https://www.portaldosjornalistas.com.br/wp-content/uploads/2019/09/Abraji.png"
 
 
