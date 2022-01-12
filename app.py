@@ -14,6 +14,7 @@ import gspread_dataframe as gd
 import base64
 import json
 import io
+import os
 
 
 app = dash.Dash(external_stylesheets = [ dbc.themes.FLATLY],)
