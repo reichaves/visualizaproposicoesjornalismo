@@ -100,7 +100,7 @@ body_app = dbc.Container([
         html.Br(),
         html.Br(),
         
-        dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', fig = figura1), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
+        dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', figure = figura1), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
              ])
 
          ],fluid = True)
