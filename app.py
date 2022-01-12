@@ -19,12 +19,13 @@ import os
 
 app = dash.Dash(external_stylesheets = [ dbc.themes.FLATLY],)
 
-# Acesso dados da Câmara
+# Credenciais de planilhas
 conteudo_codificado = os.environ["GOOGLE_SHEET_CREDENTIALS1"]
 conteudo = base64.b64decode(conteudo_codificado)
 credentials = json.loads(conteudo)
-
 gc = gspread.service_account_from_dict(credentials)
+
+# Acesso dados da Câmara
 ws = gc.open('teste_proposicoes_jornalismo_camara').worksheet("Página1")
 
 data = ws.get_all_values()
