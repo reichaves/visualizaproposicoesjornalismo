@@ -125,13 +125,28 @@ body_app = dbc.Container([
         html.Br(),
         html.Br(),
         html.Br(),
+        html.Br(),
   
         dbc.Row([html.Div([
-            html.H5('Welcome to Page 2'),
-            dcc.Link(html.A('Go back home'), href="/"),
+            html.H6('No momento eu procuro estas palavras-chave JORNALISMO, JORNALISTA, JORNALISTAS, COMUNICADORES, IMPRENSA, VERIFICADORES DE FATOS, CHECAGEM DE FATOS, FAKE NEWS, DESINFORMAÇÃO, TRANSPARÊNCIA NA INTERNET.')         
         ])
-        ])
+        ]),
   
+        html.Br(),
+  
+        dbc.Row([html.Div([
+            html.H6("E também receba notificações por Telegram de novas proposições e outros projetos da Abraji: digite '/start' no robô da Abraji:"),
+            dcc.Link(html.A('@abrajibot'), href="https://telegram.me/abrajibot"),
+        ])
+        ]), 
+  
+        html.Br(),
+  
+        dbc.Row([html.Div([
+            html.H6("Para mais detalhes e dúvidas escreva:"),
+            dcc.Link(html.A('reinaldo@abraji.org.br), href="reinaldo@abraji.org.br"),
+        ])
+        ])
   
 
          ],fluid = True)
