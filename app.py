@@ -75,7 +75,7 @@ navbar = dbc.Navbar(
                         dbc.Col(html.Img(src = PLOTLY_LOGO, height = "70px"), ),
                         
                         dbc.Col(
-             dbc.NavbarBrand("Proposições de interesse do jornalismo que tramitam no Congresso", style = {'color':'black', 'fontSize':'25px','fontFamily':'Times New Roman'}
+             dbc.NavbarBrand("Proposições de interesse do jornalismo que tramitam no Congresso - versão beta", style = {'color':'black', 'fontSize':'25px','fontFamily':'Times New Roman'}
                             ),
              ),
 
@@ -119,7 +119,17 @@ body_app = dbc.Container([
         
         dbc.Row([dbc.Col(dcc.Graph(id = 'graph-camara', figure = figura1), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6),
                  dbc.Col(dcc.Graph(id = 'graph-senado', figure = figura2), style = {'height':'450px'},xs = 12, sm = 12, md = 6, lg = 6, xl = 6)
-             ])
+             ]),
+  
+        html.Br(),
+        html.Br(),
+        html.Br(),
+        html.Br(),
+  
+        dbc.Row([html.Div(html.H4("Receba notificações por Telegram de novas proposições e outros projetos da Abraji: digite '/start' no robô da Abraji <a href='https://telegram.me/abrajibot'>abrajibot</a><br><br>Para mais detalhes e dúvidas consulte meu mestre: <a href='mailto:reinaldo@abraji.org.br'>reinaldo@abraji.org.br</a>"),
+                      style = {'textAlign':'left','fontWeight':'normal','family':'georgia','width':'100%'})])
+  
+  
 
          ],fluid = True)
 
