@@ -126,10 +126,11 @@ body_app = dbc.Container([
         html.Br(),
         html.Br(),
   
-        dbc.Row([html.Div(
-          html.H5("Receba notificações por Telegram de novas proposições e outros projetos da Abraji: digite '/start' no robô da Abraji "),
-          dcc.Link(html.A('@abrajibot'), href="https://telegram.me/abrajibot"),
-          style = {'textAlign':'left','fontWeight':'normal','family':'georgia','width':'100%'})])
+        dbc.Row([html.Div([
+            html.H5('Welcome to Page 2'),
+            dcc.Link(html.A('Go back home'), href="/"),
+        ])
+        ])
   
   
 
