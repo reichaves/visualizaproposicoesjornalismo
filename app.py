@@ -122,14 +122,14 @@ body_app = dbc.Container([
         html.Br(),
   
         dbc.Row([html.Div([
-            html.H7('No momento eu procuro estas palavras-chave JORNALISMO, JORNALISTA, JORNALISTAS, COMUNICADORES, IMPRENSA, VERIFICADORES DE FATOS, CHECAGEM DE FATOS, FAKE NEWS, DESINFORMAÇÃO, TRANSPARÊNCIA NA INTERNET, RADIODIFUSÃO, LIBERDADE DE EXPRESSÃO E INFORMAÇÕES DE INTERESSE COLETIVO.')         
+            html.P('No momento eu procuro estas palavras-chave JORNALISMO, JORNALISTA, JORNALISTAS, COMUNICADORES, IMPRENSA, VERIFICADORES DE FATOS, CHECAGEM DE FATOS, FAKE NEWS, DESINFORMAÇÃO, TRANSPARÊNCIA NA INTERNET, RADIODIFUSÃO, LIBERDADE DE EXPRESSÃO E INFORMAÇÕES DE INTERESSE COLETIVO.')         
         ])
         ]),
   
         html.Br(),
   
         dbc.Row([html.Div([
-            html.H7("E também receba notificações por Telegram de novas proposições e outros projetos da Abraji - digite '/start' no robô da Abraji:"),
+            html.P("E também receba notificações por Telegram de novas proposições e outros projetos da Abraji - digite '/start' no robô da Abraji:"),
             dcc.Link(html.A('@abrajibot'), href="https://telegram.me/abrajibot")
         ])
         ]), 
@@ -137,7 +137,7 @@ body_app = dbc.Container([
         html.Br(),
   
         dbc.Row([html.Div([
-            html.H7("Para mais detalhes e dúvidas escreva: "), dcc.Link(html.A('reinaldo@abraji.org.br'), href="reinaldo@abraji.org.br")
+            html.P("Para mais detalhes e dúvidas escreva: "), dcc.Link(html.A('reinaldo@abraji.org.br'), href="reinaldo@abraji.org.br")
         ])
         ])
   
