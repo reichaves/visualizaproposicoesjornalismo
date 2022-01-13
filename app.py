@@ -136,7 +136,7 @@ body_app = dbc.Container([
   
         dbc.Row([html.Div([
             html.H6("E também receba notificações por Telegram de novas proposições e outros projetos da Abraji: digite '/start' no robô da Abraji:"),
-            dcc.Link(html.A('@abrajibot'), href="https://telegram.me/abrajibot"),
+            dcc.Link(html.A('@abrajibot'), href="https://telegram.me/abrajibot")
         ])
         ]), 
   
@@ -144,7 +144,7 @@ body_app = dbc.Container([
   
         dbc.Row([html.Div([
             html.H6("Para mais detalhes e dúvidas escreva:"),
-            dcc.Link(html.A('reinaldo@abraji.org.br), href="reinaldo@abraji.org.br"),
+            dcc.Link(html.A('reinaldo@abraji.org.br), href="reinaldo@abraji.org.br")
         ])
         ])
   
