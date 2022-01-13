@@ -122,7 +122,7 @@ body_app = dbc.Container([
         html.Br(),
   
         dbc.Row([html.Div([
-            html.H6('No momento eu procuro estas palavras-chave JORNALISMO, JORNALISTA, JORNALISTAS, COMUNICADORES, IMPRENSA, VERIFICADORES DE FATOS, CHECAGEM DE FATOS, FAKE NEWS, DESINFORMAÇÃO, TRANSPARÊNCIA NA INTERNET.')         
+            html.H6('No momento eu procuro estas palavras-chave JORNALISMO, JORNALISTA, JORNALISTAS, COMUNICADORES, IMPRENSA, VERIFICADORES DE FATOS, CHECAGEM DE FATOS, FAKE NEWS, DESINFORMAÇÃO, TRANSPARÊNCIA NA INTERNET, RADIODIFUSÃO, LIBERDADE DE EXPRESSÃO E INFORMAÇÕES DE INTERESSE COLETIVO.')         
         ])
         ]),
   
