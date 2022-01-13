@@ -90,11 +90,7 @@ navbar = dbc.Navbar(
         dbc.Button(id = 'button', children = "Conheça a Abraji", color = "primary",  href = 'https://www.abraji.org.br/'), 
             )        
     ],
-            # add a top margin to make things look nice when the navbar
-            # isn't expanded (mt-3) remove the margin on medium or
-            # larger screens (mt-md-0) when the navbar is expanded.
-            # keep button and search box on same row (flex-nowrap).
-            # align everything on the right with left margin (ms-auto).
+            
      className="g-0 ms-auto flex-nowrap mt-3 mt-md-0",
 )
             
@@ -124,8 +120,6 @@ body_app = dbc.Container([
         html.Br(),
         html.Br(),
         html.Br(),
-        html.Br(),
-        html.Br(),
   
         dbc.Row([html.Div([
             html.H6('No momento eu procuro estas palavras-chave JORNALISMO, JORNALISTA, JORNALISTAS, COMUNICADORES, IMPRENSA, VERIFICADORES DE FATOS, CHECAGEM DE FATOS, FAKE NEWS, DESINFORMAÇÃO, TRANSPARÊNCIA NA INTERNET.')         
@@ -135,7 +129,7 @@ body_app = dbc.Container([
         html.Br(),
   
         dbc.Row([html.Div([
-            html.H6("E também receba notificações por Telegram de novas proposições e outros projetos da Abraji: digite '/start' no robô da Abraji:"),
+            html.H6("E também receba notificações por Telegram de novas proposições e outros projetos da Abraji - digite '/start' no robô da Abraji:"),
             dcc.Link(html.A('@abrajibot'), href="https://telegram.me/abrajibot")
         ])
         ]), 
@@ -143,8 +137,7 @@ body_app = dbc.Container([
         html.Br(),
   
         dbc.Row([html.Div([
-            html.H6("Para mais detalhes e dúvidas escreva:"),
-            dcc.Link(html.A('reinaldo@abraji.org.br'), href="reinaldo@abraji.org.br")
+            html.H6("Para mais detalhes e dúvidas escreva: "), dcc.Link(html.A('reinaldo@abraji.org.br'), href="reinaldo@abraji.org.br")
         ])
         ])
   
