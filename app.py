@@ -144,7 +144,7 @@ body_app = dbc.Container([
   
         dbc.Row([html.Div([
             html.H6("Para mais detalhes e dúvidas escreva:"),
-            dcc.Link(html.A('reinaldo@abraji.org.br), href="reinaldo@abraji.org.br")
+            dcc.Link(html.A('reinaldo@abraji.org.br'), href="reinaldo@abraji.org.br")
         ])
         ])
   
