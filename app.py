@@ -26,7 +26,7 @@ credentials = json.loads(conteudo)
 gc = gspread.service_account_from_dict(credentials)
 
 # Acesso dados da Câmara
-ws = gc.open('teste_proposicoes_jornalismo_camara').worksheet("Página1")
+ws = gc.open('proposicoes_jornalismo_camara').worksheet("Página1")
 
 data = ws.get_all_values()
 headers = data.pop(0)
@@ -44,7 +44,7 @@ figura1.update_layout(title = 'Total de tipos de proposições em tramitação n
                   )
 
 # Senado
-ws = gc.open('teste_proposicoes_jornalismo_senado').worksheet("Página1")
+ws = gc.open('proposicoes_jornalismo_senado').worksheet("Página1")
 
 data = ws.get_all_values()
 headers = data.pop(0)
