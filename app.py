@@ -107,7 +107,7 @@ body_app = dbc.Container([
         html.Br(),
         html.Br(),
         
-        dbc.Row([html.Div(html.H4('Como o Legislativo federal tem debatido temas de interesse do jornalismo em termos de proposições'),
+        dbc.Row([html.Div(html.H4('Como o Legislativo federal tem debatido temas de interesse do jornalismo em termos de proposições - ano de 2022'),
                       style = {'textAlign':'center','fontWeight':'bold','family':'georgia','width':'100%'})]),
 
         html.Br(),
@@ -119,6 +119,13 @@ body_app = dbc.Container([
   
         html.Br(),
         html.Br(),
+        html.Br(),
+  
+        dbc.Row([html.Div([
+            html.P('Veja neste link a planilha de proposições do Senado (https://docs.google.com/spreadsheets/d/1uewesjTrM4nr1BU5Jsg5yySNH1kqJ27VvlIA7EixZ1o/edit?usp=sharing). Veja neste link a planilha de proposições da Câmara (https://docs.google.com/spreadsheets/d/1n1PeVA3wjtoP0_gbX-y6KJHrGoM4CyQIpKpmDjcqfgo/edit?usp=sharing)')         
+        ])
+        ]),
+  
         html.Br(),
   
         dbc.Row([html.Div([
