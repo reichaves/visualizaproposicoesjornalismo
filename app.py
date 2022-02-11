@@ -129,6 +129,13 @@ body_app = dbc.Container([
         html.Br(),
   
         dbc.Row([html.Div([
+            html.A(html.P('Clique neste link e veja a planilha de proposições da Câmara'),href="https://docs.google.com/spreadsheets/d/1n1PeVA3wjtoP0_gbX-y6KJHrGoM4CyQIpKpmDjcqfgo/edit?usp=sharing")                  
+        ])
+        ]),
+  
+        html.Br(),
+  
+        dbc.Row([html.Div([
             html.P('No momento eu procuro estas palavras-chave JORNALISMO, JORNALISTA, JORNALISTAS, COMUNICADORES, IMPRENSA, VERIFICADORES DE FATOS, CHECAGEM DE FATOS, FAKE NEWS, DESINFORMAÇÃO, TRANSPARÊNCIA NA INTERNET, RADIODIFUSÃO, LIBERDADE DE EXPRESSÃO E INFORMAÇÕES DE INTERESSE COLETIVO.')         
         ])
         ]),
