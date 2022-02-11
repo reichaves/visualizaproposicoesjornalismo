@@ -122,7 +122,7 @@ body_app = dbc.Container([
         html.Br(),
   
         dbc.Row([html.Div([
-            html.P('Clique neste link e veja a planilha de proposições do Senado'),href="https://docs.google.com/spreadsheets/d/1uewesjTrM4nr1BU5Jsg5yySNH1kqJ27VvlIA7EixZ1o/edit?usp=sharing")                  
+            html.A(html.P('Clique neste link e veja a planilha de proposições do Senado'),href="https://docs.google.com/spreadsheets/d/1uewesjTrM4nr1BU5Jsg5yySNH1kqJ27VvlIA7EixZ1o/edit?usp=sharing")                  
         ])
         ]),
   
